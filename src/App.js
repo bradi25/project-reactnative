@@ -1,111 +1,87 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
+import gambar from './assets/macbook_pro2.jpg';
+import ProjekPertama from './ProjectPertama';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      <ScrollView>
+        <ProjekPertama />
+        <StylingNativeComponent />
+      </ScrollView>
     </View>
   );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const StylingNativeComponent = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <View>
+      <Text style={styles.text}>Styling Component</Text>
+      <View
+        style={{
+          width: 100,
+          height: 100,
+          borderColor: '#81ECEC',
+          backgroundColor: '#81ECEC',
+          borderWidth: 2,
+          margin: 20,
+        }}
+      />
+      <View style={styles.container}>
+        <Image source={gambar} style={styles.imagesCard} />
+        <Text style={styles.title}>New Macbook Pro</Text>
+        <Text style={styles.price}>Rp. 25.000.000</Text>
+        <Text style={styles.lokasi}>Jakarta Barat</Text>
+        <View style={styles.button}>
+          <Text style={styles.textButton}>Beli</Text>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
+  text: {
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: 'bold',
+    margin: 10,
   },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    padding: 12,
+    backgroundColor: '#F2F2F2',
+    width: 212,
+    borderRadius: 8,
+    margin: 10,
+  },
+  imagesCard: {width: 188, height: 107, borderRadius: 8},
+  title: {
+    marginTop: 12,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  price: {
+    color: '#F2994A',
+    fontSize: 12,
+    fontWeight: 'bold',
+    marginTop: 16,
+  },
+  lokasi: {
+    fontSize: 12,
+    fontWeight: '300',
+    marginTop: 12,
+  },
+  button: {
+    marginTop: 5,
+    paddingVertical: 6,
+    backgroundColor: '#6FCF97',
+    borderRadius: 25,
+  },
+  textButton: {
+    fontSize: 16,
+    fontWeight: '300',
+    textAlign: 'center',
+    color: 'white',
   },
 });
 
