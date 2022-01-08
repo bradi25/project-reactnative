@@ -9,7 +9,7 @@ import Story from './pages/PopsDinamis';
 // import TextCode from './pages/PopsDinamis';
 
 const App = () => {
-  const [show, setshow] = useState(true);
+  //   const [show, setshow] = useState(true);
   //   useEffect(() => {
   //     setTimeout(() => {
   //       setshow(false);
