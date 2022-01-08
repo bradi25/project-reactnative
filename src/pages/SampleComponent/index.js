@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, Image} from 'react-native';
 
-const ProjekPertama = () => {
+const SampleComponent = () => {
   return (
     <View>
       <View
@@ -37,4 +37,4 @@ const Photo = () => {
   );
 };
 
-export default ProjekPertama;
+export default SampleComponent;

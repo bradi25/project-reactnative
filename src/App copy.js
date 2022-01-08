@@ -5,8 +5,7 @@ import StylingComponent from './pages/StylingComponent';
 import Flexbox from './pages/FlexBox';
 import Position from './pages/Position';
 import PropsDinamis from './pages/PopsDinamis';
-import Story from './pages/PopsDinamis';
-// import TextCode from './pages/PopsDinamis';
+import TextCode from './pages/PopsDinamis';
 
 const App = () => {
   const [show, setshow] = useState(true);
@@ -22,8 +21,7 @@ const App = () => {
         {/* <StylingComponent /> */}
         {/* {show && <Flexbox />} */}
         {/* <PropsDinamis /> */}
-        <Story />
-        {/* <TextCode /> */}
+        <TextCode />
         {/* <Flexbox /> */}
         {/* <Position /> */}
       </ScrollView>
